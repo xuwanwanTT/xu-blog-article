@@ -1,0 +1,26 @@
+.markdown-content {
+  width: 960px;
+  margin: 0 auto;
+}
+.markdown-content h1 {
+  font-size: 30px;
+  font-weight: 700;
+  word-break: break-word;
+}
+.markdown-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  word-break: break-word;
+}
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+}
+.markdown-content p {
+  margin-bottom: 20px;
+}
