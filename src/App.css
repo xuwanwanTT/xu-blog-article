@@ -5,6 +5,7 @@
   position: relative;
   /* background-image: url("/static/image/bg-1.jpg") ; */
   background-size: 100% 100%;
+  background-color: #f6f6f6;
 }
 
 .scrollbar::-webkit-scrollbar {/*滚动条整体样式*/
@@ -28,10 +29,23 @@
   text-overflow: ellipsis;
 }
 
+.App > .header {
+  background-color: #fff;
+}
+
 header {
+  display: none;
   font-size: 42px;
   font-weight: bold;
   text-align: center;
+}
+
+header.active {
+  display: block;
+}
+
+.App > .main {
+  margin-bottom: 0px;
 }
 
 footer {

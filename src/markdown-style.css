@@ -1,16 +1,28 @@
 .markdown-content {
   width: 960px;
+  background-color: #fff;
   margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
 }
 .markdown-content h1 {
   font-size: 30px;
   font-weight: 700;
-  word-break: break-word;
 }
 .markdown-content h2 {
   font-size: 24px;
-  font-weight: 600;
-  word-break: break-word;
+}
+.markdown-content h3 {
+  font-size: 22px;
+}
+.markdown-content h4 {
+  font-size: 20px;
+}
+.markdown-content h5 {
+  font-size: 18px;
+}
+.markdown-content h6 {
+  font-size: 16px;
 }
 .markdown-content h1,
 .markdown-content h2,
@@ -20,7 +32,28 @@
 .markdown-content h6 {
   margin-top: 0px;
   margin-bottom: 0.5em;
+  word-break: break-word;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #000;
 }
 .markdown-content p {
+  color: #000;
+  font-size: 16px;
+  line-height: 1.8;
   margin-bottom: 20px;
+}
+.markdown-content strong {
+  font-weight: 600;
+}
+.markdown-content a {
+  color: #0681d0;
+}
+.markdown-content ul {
+  word-break: break-word;
+  margin: -5px 0 20px 20px;
+}
+.markdown-content ul li {
+  list-style: disc;
+  line-height: 30px;
 }
