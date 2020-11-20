@@ -37,25 +37,33 @@ function App() {
   }, []);
 
   useEffect(() => {
-    document.querySelector('.main').addEventListener('scroll', (e) => {
-      console.log(e)
+    const getScrollTop = (e) => {
       const top = e.target.scrollTop;
-      if (top > 99) {
+      const h = document.querySelector('.article-title').offsetHeight;
+
+      if (top > h + 32) {
         if (!+index) setIndex(1);
       } else {
         if (+index) setIndex(0);
       }
-    });
-  }, [index]);
+    };
+
+    document.querySelector('.main').addEventListener('scroll', getScrollTop);
+
+    return () => {
+      document.querySelector('.main').removeEventListener('scroll', getScrollTop)
+    };
+
+  }, []);
 
   return (
     <div className={'App layout-type1-wrap'}>
 
       <div className={'header'}>
 
-        <header className={!+index ? 'active' : ''}>xuwanwan.com</header>
+        <header className={`animated ${!+index ? 'fadeInUp active' : 'fadeOutUp'}`}>xuwanwan.com</header>
 
-        <header className={+index ? 'active' : ''}>{title}</header>
+        <header className={`article-title animated ${+index ? 'fadeInUp active' : 'fadeOutUp'}`}>{title}</header>
 
       </div>
 
@@ -71,7 +79,7 @@ function App() {
 
       </div>
 
-    </div>
+    </div >
   );
 }
 

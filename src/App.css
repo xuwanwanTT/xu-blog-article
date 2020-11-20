@@ -1,3 +1,5 @@
+@import "~animate.css";
+
 .App {
   width: 100%;
   height: 100%;
@@ -34,14 +36,15 @@
 }
 
 header {
-  display: none;
   font-size: 42px;
   font-weight: bold;
   text-align: center;
+  opacity: 0;
+  position: absolute;
 }
 
 header.active {
-  display: block;
+  opacity: 1;
 }
 
 .App > .main {
