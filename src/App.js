@@ -40,7 +40,7 @@ function App() {
     const getScrollTop = (e) => {
       const top = e.target.scrollTop;
       const h = document.querySelector('.article-title').offsetHeight;
-
+      console.log(1234, new Date())
       if (top > h + 32) {
         if (!+index) setIndex(1);
       } else {
@@ -54,16 +54,16 @@ function App() {
       document.querySelector('.main').removeEventListener('scroll', getScrollTop)
     };
 
-  }, []);
+  }, [index]);
 
   return (
     <div className={'App layout-type1-wrap'}>
 
       <div className={'header'}>
 
-        <header className={`animated ${!+index ? 'fadeInUp active' : 'fadeOutUp'}`}>xuwanwan.com</header>
+        <header className={`animated faster ${!+index ? 'fadeInDown active' : 'fadeOutUp'}`}>xuwanwan.com</header>
 
-        <header className={`article-title animated ${+index ? 'fadeInUp active' : 'fadeOutUp'}`}>{title}</header>
+        <header className={`article-title animated faster ${+index ? 'fadeInUp active' : 'fadeOutDown'}`}>{title}</header>
 
       </div>
 
