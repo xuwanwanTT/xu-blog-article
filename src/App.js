@@ -1,8 +1,8 @@
 import './layout.css';
 import './markdown-style.css';
 import './App.css';
-import ReactMarkdown from 'react-markdown';
 import { useEffect, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
 
 function App() {
@@ -61,7 +61,7 @@ function App() {
 
       <div className={'footer'}>
 
-        <footer>Copyright © 2018 - 2020 <a href="#/">xuwanwan</a>. All rights reserved.</footer>
+        <footer>Copyright © 2018 - {new Date().getFullYear()} <a href="#/">xuwanwan</a>. All rights reserved.</footer>
 
       </div>
 
