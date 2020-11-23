@@ -3,28 +3,7 @@ import './markdown-style.css';
 import './App.css';
 import ReactMarkdown from 'react-markdown';
 import { useEffect, useState } from 'react';
-
-const demoMd = `
-# 这是一个测试一级标题
-
-### 这是一个测试三级标题
-
-这就是一段文字，略略略~这就是一段文字，略略略~这就是一段文字，略略略~这就是一段文字，略略略~
-这就是一段文字，略略略~这就是一段文字，略略略~这就是一段文字，略略略~
-
-这里空了一行是第二自然段了，**我加粗了**
-
-[这是个链接](https://www.baidu.com)
-
-这里是一个列表
-- 第一项
-- 第二项
-- 第三项
-
-
-`
-const testMd = demoMd + demoMd;
-const testTitle = '这是一个测试一级标题';
+import axios from 'axios';
 
 function App() {
   const [markdownText, setMarkdownText] = useState('');
@@ -32,15 +11,22 @@ function App() {
   const [index, setIndex] = useState('');
 
   useEffect(() => {
-    setMarkdownText(testMd);
-    setTitle(testTitle);
+    const id = window.location.pathname.slice(1);
+
+    axios.get(`/static/article/${id}.md`).then(res => {
+      const md = res.data;
+      const title = md.match(/#(.+)\n/)[1];
+      setMarkdownText(md);
+      setTitle(title);
+    });
+
   }, []);
 
   useEffect(() => {
     const getScrollTop = (e) => {
       const top = e.target.scrollTop;
       const h = document.querySelector('.article-title').offsetHeight;
-      console.log(1234, new Date())
+
       if (top > h + 32) {
         if (!+index) setIndex(1);
       } else {

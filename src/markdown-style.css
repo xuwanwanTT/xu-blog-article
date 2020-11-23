@@ -57,3 +57,9 @@
   list-style: disc;
   line-height: 30px;
 }
+.markdown-content code {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  color: #fff;
+}
