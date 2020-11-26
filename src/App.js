@@ -11,7 +11,8 @@ function App() {
   const [index, setIndex] = useState('');
 
   useEffect(() => {
-    const id = window.location.pathname.slice(1);
+    const id = window.location.pathname.slice(9);
+    console.log(window.location.pathname)
 
     axios.get(`/static/article/${id}.md`).then(res => {
       const md = res.data;
